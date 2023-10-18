@@ -181,7 +181,7 @@ const KPI: React.FC = () => {
             label="工作时间"
             name="password"
           >
-            <Input.Password/>
+            <DatePicker/>
           </Form.Item>
 
           <Form.Item wrapperCol={{offset: 8, span: 16}}>

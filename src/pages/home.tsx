@@ -30,7 +30,7 @@ const Region: React.FC = () => (
     <Form.Item<FieldType>
       label="姓名"
       name="username"
-      rules={[{required: true, message: 'Please input your 姓名!'}]}
+      rules={[{required: true, message: '请输入姓名!'}]}
     >
       <Input/>
     </Form.Item>
@@ -38,7 +38,7 @@ const Region: React.FC = () => (
     <Form.Item<FieldType>
       label="年龄"
       name="password"
-      rules={[{required: true, message: 'Please input your 年龄!'}]}
+      rules={[{required: true, message: '请输入年龄!'}]}
     >
       <Input.Password/>
     </Form.Item>
@@ -46,7 +46,7 @@ const Region: React.FC = () => (
     <Form.Item<FieldType>
       label="性别"
       name="password"
-      rules={[{required: true, message: 'Please input your 性别!'}]}
+      rules={[{required: true, message: '请输入性别!'}]}
     ><Radio.Group>
       <Radio value={1}>男</Radio>
       <Radio value={2}>女</Radio>
@@ -56,7 +56,7 @@ const Region: React.FC = () => (
     <Form.Item<FieldType>
       label="银行卡号"
       name="password"
-      rules={[{required: true, message: 'Please input your 银行卡号!'}]}
+      rules={[{required: true, message: '请输入银行卡号!'}]}
     >
       <Input.Password/>
     </Form.Item>
@@ -64,7 +64,7 @@ const Region: React.FC = () => (
     <Form.Item<FieldType>
       label="证件号码"
       name="password"
-      rules={[{required: true, message: 'Please input your 证件号码!'}]}
+      rules={[{required: true, message: '请输入证件号码!'}]}
     >
       <Input.Password/>
     </Form.Item>
@@ -72,14 +72,14 @@ const Region: React.FC = () => (
     <Form.Item<FieldType>
       label="头像"
       name="password"
-      rules={[{required: true, message: 'Please input your 头像!'}]}
+      rules={[{required: true, message: '请输入头像!'}]}
     >
       <UploadFile/>
     </Form.Item>
     <Form.Item<FieldType>
       label="证件信息"
       name="password"
-      rules={[{required: true, message: 'Please input your 证件!'}]}
+      rules={[{required: true, message: '请输入证件信息!'}]}
     >
       <UploadFile/>
     </Form.Item>

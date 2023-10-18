@@ -31,7 +31,7 @@ const Region: React.FC = () => (
     <Form.Item<FieldType>
       label="站点名称"
       name="username"
-      rules={[{required: true, message: 'Please input your 站点名称!'}]}
+      rules={[{required: true, message: '请输入站点名称!'}]}
     >
       <Input/>
     </Form.Item>
@@ -39,7 +39,6 @@ const Region: React.FC = () => (
     <Form.Item<FieldType>
       label="经纬度"
       name="password"
-      rules={[{required: true, message: 'Please input your 年龄!'}]}
     >
       <Image
         width={600}
@@ -49,7 +48,7 @@ const Region: React.FC = () => (
     <Form.Item<FieldType>
       label="考勤时间"
       name="password"
-      rules={[{required: true, message: 'Please input your 年龄!'}]}
+      rules={[{required: true, message: '请输入考勤时间!'}]}
     >
       <DatePicker/>
     </Form.Item>
@@ -57,7 +56,7 @@ const Region: React.FC = () => (
     <Form.Item<FieldType>
       label="考勤照片"
       name="password"
-      rules={[{required: true, message: 'Please input your 地标!'}]}
+      rules={[{required: true, message: '请输入考勤照片!'}]}
     >
       <UploadFile/>
     </Form.Item>
