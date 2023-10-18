@@ -1,15 +1,15 @@
 import React from 'react';
 import {Avatar, Button, Card, DatePicker, Form, Input, Space, Table, Tag} from 'antd';
 import type {ColumnsType} from 'antd/es/table';
-import {UserOutlined} from "@ant-design/icons";
+import {UserOutlined} from '@ant-design/icons';
 
 interface DataType {
   key: string;
   name: string;
   age: number;
-  tel: string;
-  avatar: string;
   address: string;
+  avatar: string;
+  date: string;
   tags: string[];
 }
 
@@ -27,29 +27,29 @@ const columns: ColumnsType<DataType> = [
     render: (text) => <a>{text}</a>,
   },
   {
-    title: '年龄',
+    title: 'Age',
     dataIndex: 'age',
     key: 'age',
   },
   {
-    title: '工作站点',
+    title: '站点',
     dataIndex: 'address',
     key: 'address',
   },
   {
-    title: '联系方式',
-    dataIndex: 'tel',
-    key: 'tel',
+    title: '工作时间',
+    dataIndex: 'date',
+    key: 'date',
   },
   {
-    title: '考勤状态',
+    title: '上班状态',
     key: 'tags',
     dataIndex: 'tags',
     render: (_, {tags}) => (
       <>
         {tags.map((tag) => {
           let color = tag.length > 5 ? 'geekblue' : 'green';
-          if (tag === '缺勤') {
+          if (tag === '休息') {
             color = 'volcano';
           }
           return (
@@ -62,11 +62,13 @@ const columns: ColumnsType<DataType> = [
     ),
   },
   {
-    title: 'Action',
+    title: '操作',
     key: 'action',
     render: (_, record) => (
       <Space size="middle">
-        <a>查看</a>
+        <a>分配站点</a>
+        <a>分配直属上司</a>
+        <a>分配工作时间</a>
       </Space>
     ),
   },
@@ -78,8 +80,8 @@ const data: DataType[] = [
     name: 'John Brown',
     avatar: 'John Brown',
     age: 32,
+    date: "9:00-18:00",
     address: 'New York No. 1 Lake Park',
-    tel: '131XXXXX',
     tags: ['正常'],
   },
   {
@@ -87,34 +89,43 @@ const data: DataType[] = [
     name: 'Jim Green',
     avatar: 'John Brown',
     age: 42,
+    date: "9:00-18:00",
     address: 'London No. 1 Lake Park',
-    tel: '131XXXXX',
-    tags: ['缺勤'],
+    tags: ['休息'],
   },
   {
     key: '3',
     name: 'Joe Black',
-    age: 32,
-    tel: '131XXXXX',
     avatar: 'John Brown',
+    age: 32,
+    date: "9:00-18:00",
     address: 'Sydney No. 1 Lake Park',
     tags: ['正常'],
   },
   {
     key: '4',
-    name: 'Jim Green',
+    name: 'John Brown',
     avatar: 'John Brown',
-    age: 42,
-    address: 'London No. 1 Lake Park',
-    tel: '131XXXXX',
-    tags: ['缺勤'],
+    age: 32,
+    date: "9:00-18:00",
+    address: 'New York No. 1 Lake Park',
+    tags: ['正常'],
   },
   {
     key: '5',
+    name: 'Jim Green',
+    avatar: 'John Brown',
+    age: 42,
+    date: "9:00-18:00",
+    address: 'London No. 1 Lake Park',
+    tags: ['休息'],
+  },
+  {
+    key: '6',
     name: 'Joe Black',
     avatar: 'John Brown',
     age: 32,
-    tel: '131XXXXX',
+    date: "9:00-18:00",
     address: 'Sydney No. 1 Lake Park',
     tags: ['正常'],
   },
@@ -123,7 +134,7 @@ const data: DataType[] = [
 type FieldType = {
   username?: string;
   password?: string;
-  remember?: string;
+  point?: string;
 };
 const KPI: React.FC = () => {
   const onFinish = (values: any) => {
@@ -147,33 +158,35 @@ const KPI: React.FC = () => {
           autoComplete="off"
         >
           <Form.Item<FieldType>
-            label="站点"
+            label="用户名"
             name="username"
+          >
+            <Input/>
+          </Form.Item>
+          <Form.Item<FieldType>
+            label="站点"
+            name="point"
           >
             <Input/>
           </Form.Item>
 
           <Form.Item<FieldType>
-            label="姓名"
+            label="电话"
             name="password"
           >
             <Input.Password/>
           </Form.Item>
+
           <Form.Item<FieldType>
-            label="日期"
+            label="工作时间"
             name="password"
           >
-            <DatePicker/>
+            <Input.Password/>
           </Form.Item>
 
           <Form.Item wrapperCol={{offset: 8, span: 16}}>
             <Button type={'primary'} htmlType="submit">
               搜索
-            </Button>
-          </Form.Item>
-          <Form.Item wrapperCol={{offset: 8, span: 16}}>
-            <Button type={'primary'}>
-              导出考勤记录
             </Button>
           </Form.Item>
         </Form>

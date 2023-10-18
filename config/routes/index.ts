@@ -19,41 +19,34 @@ import {region} from "@umijs/bundler-vite/compiled/caniuse-lite";
 export default [
   {
     path: '/welcome',
-    name: '注册',
+    name: '员工注册',
     icon: 'smile',
     component: './home',
   },
-  /*
-  ...microApp,
-  ...manage,
-  // ...order,
-  ...goods,
-  ...category,
-  ...stock,
-  ...decorate,
-  {
-    path: '/admin',
-    name: 'admin',
-    icon: 'crown',
-    access: 'canAdmin',
-    routes: [
-      {
-        path: '/admin/sub-page',
-        name: 'sub-page',
-        icon: 'smile',
-        component: './home',
-      },
-      {
-        component: './defaultPage/404',
-      },
-    ],
-  },*/
   ...user,
   {
+    path: '/Point',
+    name: '马拉松站点',
+    icon: 'crown',
+    component: './Point'
+  },
+  {
+    path: '/Staff',
+    name: '员工信息',
+    icon: 'crown',
+    component: './Staff'
+  },
+  {
     path: '/KPI',
-    name: '考勤',
+    name: '考勤记录',
     icon: 'crown',
     component: './KPI'
+  },
+  {
+    path: '/ClockIn',
+    name: '员工考勤',
+    icon: 'crown',
+    component: './ClockIn'
   },
   {
     path: '/',

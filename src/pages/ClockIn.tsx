@@ -1,6 +1,7 @@
 import React from 'react';
-import {Button, Checkbox, Form, Input, Radio} from 'antd';
+import {Button, Image, Form, Input, Radio, DatePicker} from 'antd';
 import UploadFile from "@/pages/uploadFile";
+import pointPng from "../../public/image/location.png";
 
 const onFinish = (values: any) => {
   console.log('Success:', values);
@@ -28,66 +29,42 @@ const Region: React.FC = () => (
     autoComplete="off"
   >
     <Form.Item<FieldType>
-      label="姓名"
+      label="站点名称"
       name="username"
-      rules={[{required: true, message: 'Please input your 姓名!'}]}
+      rules={[{required: true, message: 'Please input your 站点名称!'}]}
     >
       <Input/>
     </Form.Item>
 
     <Form.Item<FieldType>
-      label="年龄"
+      label="经纬度"
       name="password"
       rules={[{required: true, message: 'Please input your 年龄!'}]}
     >
-      <Input.Password/>
+      <Image
+        width={600}
+        src={pointPng}
+      />
     </Form.Item>
-
     <Form.Item<FieldType>
-      label="性别"
+      label="考勤时间"
       name="password"
-      rules={[{required: true, message: 'Please input your 性别!'}]}
-    ><Radio.Group>
-      <Radio value={1}>男</Radio>
-      <Radio value={2}>女</Radio>
-    </Radio.Group>
-    </Form.Item>
-
-    <Form.Item<FieldType>
-      label="银行卡号"
-      name="password"
-      rules={[{required: true, message: 'Please input your 银行卡号!'}]}
+      rules={[{required: true, message: 'Please input your 年龄!'}]}
     >
-      <Input.Password/>
+      <DatePicker/>
     </Form.Item>
 
     <Form.Item<FieldType>
-      label="证件号码"
+      label="考勤照片"
       name="password"
-      rules={[{required: true, message: 'Please input your 证件号码!'}]}
-    >
-      <Input.Password/>
-    </Form.Item>
-
-    <Form.Item<FieldType>
-      label="头像"
-      name="password"
-      rules={[{required: true, message: 'Please input your 头像!'}]}
+      rules={[{required: true, message: 'Please input your 地标!'}]}
     >
       <UploadFile/>
     </Form.Item>
-    <Form.Item<FieldType>
-      label="证件信息"
-      name="password"
-      rules={[{required: true, message: 'Please input your 证件!'}]}
-    >
-      <UploadFile/>
-    </Form.Item>
-
 
     <Form.Item wrapperCol={{offset: 8, span: 16}}>
       <Button  type={'primary'}  htmlType="submit">
-        注册
+        添加考勤
       </Button>
     </Form.Item>
   </Form>

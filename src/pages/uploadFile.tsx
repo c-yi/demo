@@ -55,7 +55,7 @@ const uploadFile: React.FC = () => {
         onPreview={handlePreview}
         onChange={handleChange}
       >
-        {fileList.length >= 8 ? null : uploadButton}
+        {fileList.length >= 1 ? null : uploadButton}
       </Upload>
       <Modal open={previewOpen} title={previewTitle} footer={null} onCancel={handleCancel}>
         <img alt="example" style={{ width: '100%' }} src={previewImage} />

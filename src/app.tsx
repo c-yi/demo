@@ -12,6 +12,7 @@ import React from 'react';
 import { AvatarDropdown, AvatarName } from './components/RightContent/AvatarDropdown';
 const isDev = process.env.NODE_ENV === 'development';
 const loginPath = '/user/login';
+import userInfo from './pages/User/userInfo.json'
 
 /**
  * @see  https://umijs.org/zh-CN/plugins/plugin-initial-state
@@ -24,10 +25,12 @@ export async function getInitialState(): Promise<{
 }> {
   const fetchUserInfo = async () => {
     try {
-      const msg = await queryCurrentUser({
+      return userInfo.data
+    /*  const msg = await queryCurrentUser({
         skipErrorHandler: true,
       });
-      return msg.data;
+      console.log("=> msg", msg);
+      return msg.data;*/
     } catch (error) {
       history.push(loginPath);
     }
@@ -63,7 +66,7 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
     waterMarkProps: {
       content: initialState?.currentUser?.name,
     },
-    footerRender: () => <Footer />,
+    footerRender: () => <></>,
     onPageChange: () => {
       const { location } = history;
       // 如果没有登录，重定向到 login
