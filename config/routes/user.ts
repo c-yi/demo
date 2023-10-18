@@ -9,7 +9,7 @@ export default [
         component: './User/Login',
       },
       {
-        component: './defaultPage/404',
+        component: './404',
       },
     ],
   },

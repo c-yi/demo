@@ -12,13 +12,9 @@
  */
 
 import user from './user';
-import manage from './manage';
 // import order from './order';
-import goods from './goods';
-import category from './category';
-import stock from './stock';
-import decorate from './decorate';
-import microApp from './microApp';
+
+import {region} from "@umijs/bundler-vite/compiled/caniuse-lite";
 
 export default [
   {
@@ -27,6 +23,7 @@ export default [
     icon: 'smile',
     component: './home',
   },
+  /*
   ...microApp,
   ...manage,
   // ...order,
@@ -50,13 +47,13 @@ export default [
         component: './defaultPage/404',
       },
     ],
-  },
+  },*/
   ...user,
   {
     path: '/',
     redirect: '/welcome',
   },
   {
-    component: './defaultPage/404',
+    component: './404',
   },
 ];
