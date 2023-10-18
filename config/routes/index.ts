@@ -19,7 +19,7 @@ import {region} from "@umijs/bundler-vite/compiled/caniuse-lite";
 export default [
   {
     path: '/welcome',
-    name: 'welcome',
+    name: '注册',
     icon: 'smile',
     component: './home',
   },
@@ -49,6 +49,12 @@ export default [
     ],
   },*/
   ...user,
+  {
+    path: '/KPI',
+    name: '考勤',
+    icon: 'crown',
+    component: './KPI'
+  },
   {
     path: '/',
     redirect: '/welcome',

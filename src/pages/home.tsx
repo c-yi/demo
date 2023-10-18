@@ -30,7 +30,7 @@ const Region: React.FC = () => (
     <Form.Item<FieldType>
       label="姓名"
       name="username"
-      rules={[{required: true, message: 'Please input your username!'}]}
+      rules={[{required: true, message: 'Please input your 姓名!'}]}
     >
       <Input/>
     </Form.Item>
@@ -46,7 +46,7 @@ const Region: React.FC = () => (
     <Form.Item<FieldType>
       label="性别"
       name="password"
-      rules={[{required: true, message: 'Please input your 年龄!'}]}
+      rules={[{required: true, message: 'Please input your 性别!'}]}
     ><Radio.Group>
       <Radio value={1}>男</Radio>
       <Radio value={2}>女</Radio>
@@ -55,22 +55,29 @@ const Region: React.FC = () => (
     <Form.Item<FieldType>
       label="头像"
       name="password"
-      rules={[{required: true, message: 'Please input your 年龄!'}]}
+      rules={[{required: true, message: 'Please input your 头像!'}]}
     >
       <UploadFile/>
     </Form.Item>
     <Form.Item<FieldType>
       label="证件"
       name="password"
-      rules={[{required: true, message: 'Please input your 年龄!'}]}
+      rules={[{required: true, message: 'Please input your 证件!'}]}
     >
       <UploadFile/>
     </Form.Item>
 
 
+    <Form.Item<FieldType>
+        label="银行卡号"
+        name="password"
+        rules={[{required: true, message: 'Please input your 银行卡号!'}]}
+    >
+      <Input.Password/>
+    </Form.Item>
     <Form.Item wrapperCol={{offset: 8, span: 16}}>
-      <Button type="primary" htmlType="submit">
-        Submit
+      <Button  type={'primary'}  htmlType="submit">
+        注册
       </Button>
     </Form.Item>
   </Form>

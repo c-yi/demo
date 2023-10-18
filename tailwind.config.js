@@ -5,5 +5,8 @@ module.exports = {
   theme: {
     extend: {},
   },
+  corePlugins: {
+    preflight: false,  // 添加这一行
+  },
   plugins: [],
 };
